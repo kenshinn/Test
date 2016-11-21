@@ -4,8 +4,8 @@
 	"PublishDate":"20161117",
 	"url":"https://xxxx/xxxx",
 	"whatsnew":{
-		"default":"it's xxx",
-		"zh-TW":"你好"
+		"default":"New VivePort version available",
+		"zh_TW":"有一個新版本的 VivePort 可以更新"
 	},
 	"forceUpdate":"false"	
 }
