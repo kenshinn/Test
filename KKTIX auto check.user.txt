@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KKTIX auto check
 // @namespace    https://kenshinnn.blogspot.tw
-// @version      0.1
+// @version      0.2
 // @description  自動勾選kktix權利說明
 // @author       Kenshinn
 // @match        https://kktix.com/events/*
