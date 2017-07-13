@@ -12,7 +12,7 @@
     'use strict';
     var row = 0; // 第n筆項目
     var count = 2; // 買幾筆
-    var time_delayed = 300; // 進入頁面後執行的時間，網速慢時可能需要加大
+    var time_delayed = 500; // 進入頁面後執行的時間，網速慢時可能需要加大
     var autoClickNext = true;  // 是否自動點擊下一步
     // Your code here...
     setTimeout(function() {
