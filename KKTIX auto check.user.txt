@@ -12,11 +12,13 @@
     'use strict';
     var row = 0; // 第n筆項目
     var count = 2; // 買幾筆
+    var time_delayed = 300;
     // Your code here...
     setTimeout(function() {
         document.querySelector("#person_agree_terms").click();
         for(var i = 0; i < count; i++) {
             document.querySelectorAll(".ticket-unit .display-table-row button.btn-default.plus")[row].click();
         }
-    }, 500);
+        document.querySelector("button.btn.btn-primary").click();
+    }, time_delayed);
 })();
