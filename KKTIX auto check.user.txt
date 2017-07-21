@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KKTIX auto check
 // @namespace    https://kenshinnn.blogspot.tw
-// @version      0.3
+// @version      0.4
 // @description  自動勾選kktix權利說明
 // @author       Kenshinn
 // @match        https://kktix.com/events/*
@@ -12,19 +12,48 @@
     'use strict';
     var row = 0; // 第n筆項目
     var count = 2; // 買幾筆    
-    var time_delayed = 500; // 進入頁面後執行的時間，網速慢時可能需要加大
+    var time_delayed = 100; // 進入頁面後執行的時間，網速慢時可能需要加大
     var autoClickNext = true;  // 是否自動點擊下一步
     // Your code here...
-    setTimeout(function() {
-        document.querySelector("#person_agree_terms").click();
-        for(var i = 0; i < count; i++) {
-            document.querySelectorAll(".ticket-unit .display-table-row button.btn-default.plus")[row].click();
+    
+    var _k_click = function() {
+        var _k_agree = document.querySelector("#person_agree_terms");
+        var _k_text = document.querySelectorAll(".ticket-unit .display-table-row input[type='text']")[row];
+        var _k_p_button = document.querySelectorAll(".ticket-unit .display-table-row button.btn-default.plus")[row];
+        
+        if(!_k_agree || _k_agree === null || _k_agree.click === null || !_k_text || _k_text === null || !_k_p_button || _k_p_button === null) {
+            setTimeout(_k_click, time_delayed);
+            return;
         }
         
-        var isOk = document.querySelectorAll(".ticket-unit .display-table-row input[type='text']")[row].value < count;
+        if(!_k_agree.checked) {
+            _k_agree.click();  
+        }
+
+        if(!_k_agree.checked) {
+            setTimeout(_k_click, time_delayed);
+            return;
+        }
+        
+//        if(_k_p_button.click === null) {
+//            setTimeout(_k_click, time_delayed);
+//            return;            
+//        }
+
+        for(var i = 0; i < count; i++) {            
+            if(_k_p_button !== null && _k_p_button.click !== null) {
+                _k_p_button.click();
+            }
+        }
+        
+        document.body.scrollTop = document.body.scrollHeight;
+        
+        var isOk = _k_text.value < count;
         
         if(autoClickNext && isOk) {
             document.querySelector("button.btn.btn-primary").click();
         }
-    }, time_delayed);
+    };
+    
+    setTimeout(_k_click, time_delayed);
 })();
