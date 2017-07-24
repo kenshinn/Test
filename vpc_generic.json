@@ -1,11 +1,30 @@
 {
-	"versionName":"1.0.2",
-	"versionCode":"20000",
-	"PublishDate":"20161117",
-	"url":"https://kenshinn.github.io/Test/RemotePlayPortV5.0.apk",
-	"whatsnew":{
-		"default":"New VivePort version available",
-		"zh_TW":"有一個新版本的 VivePort 可以更新"
-	},
-	"forceUpdate":"false"	
+  "link": {
+    "versionCode": "100293",
+    "PublishDate": "20170714",
+    "url": "https://assets-global.htcvive.com/static-misc/apk/prod-viveport-link.apk",
+    "versionName": "1.0.0.100293",
+    "miniForceVersionCodeLink":"100293",
+    "forceUpdate": "true",
+    "whatsnew": {
+      "zh_TW": "更新Link Launcher功能 (Link 1.2.1)",
+      "default": "Update Link Launcher feature (Link 1.2.1)",
+      "zh_CN": "更新Link Launcher功能 (Link 1.2.1)"
+    }
+  },
+     
+    "link_utd": {
+    "versionCode": "100285",
+    "PublishDate": "20170713",
+    "url": "https://assets-global.htcvive.com/static-misc/delegated/mvr_objects/app-link-debug-signed-100285.apk",
+    "versionName": "1.0.0.100285",
+    "miniForceVersionCodeLink":"100285",
+    "forceUpdate": "false",
+    "whatsnew": {
+      "zh_TW": "更新Link Launcher功能 (Link 1.1.12)",
+      "default": "Update Link Launcher feature (Link 1.1.12)",
+      "zh_CN": "更新Link Launcher功能 (Link 1.1.12)"
+    }
+  }
+  
 }
