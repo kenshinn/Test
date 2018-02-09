@@ -11,15 +11,21 @@
 (function() {
 	'use strict';
 	var time_delayed = 100; 
-	var _k_click = function() {}
-		var button = $("#ButtonContainer > button");		
-		if(!button || button === null || button[0].textContent == "完售，請參考其他商品") {
+	var _k_click = function() {
+		var _b = $("#ButtonContainer > button");
+        console.log("button: " + typeof(_b));
+        console.log("button: " + typeof(_b[0]));
+        console.log("button undefined: " + typeof(_b[0]));
+		if(typeof(_b) === "undefined" || !_b || _b === null || typeof(_b[0]) === "undefined" || !_b[0].textContent || _b[0].textContent == "完售，請參考其他商品") {
+            console.log("next");
 			setTimeout(_k_click, time_delayed);
 			return;
 		}
 
-		button.click();
+		_b.click();
 		var alink = $("#ServiceContainer > li:nth-child(1) > a");
 		alink.click();
-	}
-}
+	};
+
+    setTimeout(_k_click, time_delayed);
+})();
