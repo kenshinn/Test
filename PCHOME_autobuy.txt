@@ -1,0 +1,25 @@
+// ==UserScript==
+// @name         PCHOME auto buy
+// @namespace    https://kenshinnn.blogspot.tw
+// @version      0.1
+// @description  自動購買 pchome 24 小時購物
+// @author       Kenshinn
+// @match        http://24h.pchome.com.tw/prod/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+	'use strict';
+	var time_delayed = 100; 
+	var _k_click = function() {}
+		var button = $("#ButtonContainer > button");		
+		if(!button || button === null || button[0].textContent == "完售，請參考其他商品") {
+			setTimeout(_k_click, time_delayed);
+			return;
+		}
+
+		button.click();
+		var alink = $("#ServiceContainer > li:nth-child(1) > a");
+		alink.click();
+	}
+}
