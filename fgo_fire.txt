@@ -1,3 +1,4 @@
+#use powershell
 #等待進入戰鬥
 sleep 35
 #孔明3技
