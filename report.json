@@ -1,0 +1,862 @@
+{"File":"D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Main.csproj","Date":"2018-06-13T15:04:28.6441983+08:00","Diagnostics":[
+    {
+      "Id": "UEA0003",
+      "Message": "'ViveportWebServiceTest' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportWebService\\ViveportWebServiceTest.cs",
+      "LineNumber": 14,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'ViveportWebServiceTest' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportWebService\\ViveportWebServiceTest.cs",
+      "LineNumber": 19,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'__ViveportWebServiceTest' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportWebService\\__ViveportWebServiceTest.cs",
+      "LineNumber": 21,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'__ViveportWebServiceTest' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportWebService\\__ViveportWebServiceTest.cs",
+      "LineNumber": 26,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'LauncherUtilTest' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\Utility\\LauncherUtilTest.cs",
+      "LineNumber": 38,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'ContentDirectorTest' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ContentDirectorTest.cs",
+      "LineNumber": 192,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'DelayMainCamShow' has an empty MonoBehaviour method 'LateUpdate'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\UI\\CameraControl\\DelayMainCamShow.cs",
+      "LineNumber": 19,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'DelayMainCamShow' has an empty MonoBehaviour method 'OnGUI'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\UI\\CameraControl\\DelayMainCamShow.cs",
+      "LineNumber": 42,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method RuntimeDemo.OnGUI calls DrawExample1() which eventually calls walker.GetComponent<splineMove>() which could impact performance. Cache the result from walker.GetComponent<splineMove>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\NewScene\\WalkerSystem\\SWS\\Examples\\Scripts\\RuntimeDemo.cs",
+      "LineNumber": 55,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method RuntimeDemo.OnGUI calls DrawExample6() which eventually calls example6.moveRef.GetComponent<EventReceiver>() which could impact performance. Cache the result from example6.moveRef.GetComponent<EventReceiver>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\NewScene\\WalkerSystem\\SWS\\Examples\\Scripts\\RuntimeDemo.cs",
+      "LineNumber": 60,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method RuntimeDemo.OnGUI calls DrawExample7() which eventually calls newPath.GetComponent<LineRenderer>() which could impact performance. Cache the result from newPath.GetComponent<LineRenderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\NewScene\\WalkerSystem\\SWS\\Examples\\Scripts\\RuntimeDemo.cs",
+      "LineNumber": 61,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'MedaiPlayerSampleSphereGUI' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\MedaiPlayerSampleSphereGUI.cs",
+      "LineNumber": 7,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'MedaiPlayerSampleGUI' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\MedaiPlayerSampleGUI.cs",
+      "LineNumber": 17,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'ViveportTest' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportTest.cs",
+      "LineNumber": 251,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'ViveportExample' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportExample.cs",
+      "LineNumber": 99,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method NewWifiScript.Update calls updateUI() which eventually calls updateListRoutine() which could impact performance. Cache the result from updateListRoutine() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\OOBE\\Scripts\\NewWifiScript.cs",
+      "LineNumber": 403,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method hit.collider.GetComponent<IGazeInteractive> () is called from GazeDirectionRay.Update which could cause performance problems. Cache the result from hit.collider.GetComponent<IGazeInteractive> () in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ControllerModel\\QIYIVR\\ControllerVisual\\Scripts\\GazeDirectionRay.cs",
+      "LineNumber": 31,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method Mask.LateUpdate calls VersionUpgradeMask() which eventually calls GetComponent<Renderer>() which could impact performance. Cache the result from GetComponent<Renderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\CurvedScrollview\\Alpha Masking\\Mask.cs",
+      "LineNumber": 383,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method Mask.LateUpdate calls RefreshMaskPropertyBlock() which eventually calls GetComponent<Renderer>() which could impact performance. Cache the result from GetComponent<Renderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\CurvedScrollview\\Alpha Masking\\Mask.cs",
+      "LineNumber": 388,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method Mask.LateUpdate calls UpdateMasking() which eventually calls GetComponent<RectTransform>() which could impact performance. Cache the result from GetComponent<RectTransform>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\CurvedScrollview\\Alpha Masking\\Mask.cs",
+      "LineNumber": 389,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method CurvedUISettings.Update calls SetUIAngle(angle) which eventually calls GetComponent<Canvas>() which could impact performance. Cache the result from GetComponent<Canvas>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\CurvedScrollview\\CurvedUI\\Scripts\\CurvedUISettings.cs",
+      "LineNumber": 100,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GetComponent<Graphic>() is called from CurvedUIVertexEffect.Update which could cause performance problems. Cache the result from GetComponent<Graphic>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\CurvedScrollview\\CurvedUI\\Scripts\\CurvedUIVertexEffect.cs",
+      "LineNumber": 167,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GetComponent<Graphic>() is called from CurvedUIVertexEffect.Update which could cause performance problems. Cache the result from GetComponent<Graphic>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\CurvedScrollview\\CurvedUI\\Scripts\\CurvedUIVertexEffect.cs",
+      "LineNumber": 169,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GetComponent<Graphic>() is called from CurvedUIVertexEffect.Update which could cause performance problems. Cache the result from GetComponent<Graphic>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\CurvedScrollview\\CurvedUI\\Scripts\\CurvedUIVertexEffect.cs",
+      "LineNumber": 172,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method CurvedUIVertexEffect.Update calls SetVerticesDirty() which eventually calls this.GetComponentsInChildren<Graphic>() which could impact performance. Cache the result from this.GetComponentsInChildren<Graphic>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\CurvedScrollview\\CurvedUI\\Scripts\\CurvedUIVertexEffect.cs",
+      "LineNumber": 217,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method MediaPlayerCtrl.Update calls Call_UpdateVideoTexture() which eventually calls m_TargetMaterial[i].GetComponent<MeshRenderer>() which could impact performance. Cache the result from m_TargetMaterial[i].GetComponent<MeshRenderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\MediaPlayerCtrl.cs",
+      "LineNumber": 586,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'MediaPlayerCtrl' has an empty MonoBehaviour method 'OnApplicationQuit'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\MediaPlayerCtrl.cs",
+      "LineNumber": 326,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method MediaPlayerFullScreenCtrl.Update calls Resize() which eventually calls m_objVideo.transform.GetComponent<MediaPlayerCtrl>() which could impact performance. Cache the result from m_objVideo.transform.GetComponent<MediaPlayerCtrl>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\MediaPlayerFullScreenCtrl.cs",
+      "LineNumber": 18,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method Resize() is called from MediaPlayerFullScreenCtrl.Update which could cause performance problems. Cache the result from Resize() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\MediaPlayerFullScreenCtrl.cs",
+      "LineNumber": 21,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GameObject.Find(\"MainMenuNavForm(Clone)\") is called from ControllerBackMenu.Update which could cause performance problems. Cache the result from GameObject.Find(\"MainMenuNavForm(Clone)\") in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\ControllerPack\\ControllerBackMenu.cs",
+      "LineNumber": 23,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GameObject.Find(\"OOBEHomeMenuForm(Clone)\") is called from ControllerBackMenu.Update which could cause performance problems. Cache the result from GameObject.Find(\"OOBEHomeMenuForm(Clone)\") in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\ControllerPack\\ControllerBackMenu.cs",
+      "LineNumber": 23,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GameObject.Find(\"OOBEHomeMenuForm(Clone)\") is called from ControllerBackMenu.Update which could cause performance problems. Cache the result from GameObject.Find(\"OOBEHomeMenuForm(Clone)\") in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\ControllerPack\\ControllerBackMenu.cs",
+      "LineNumber": 31,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'ControllerBackMenu' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\ControllerPack\\ControllerBackMenu.cs",
+      "LineNumber": 11,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method ControllerDriverScript.Update calls updateAlpha() which eventually calls ControllerObject.transform.Find(\"body\").GetComponent<MeshRenderer>() which could impact performance. Cache the result from ControllerObject.transform.Find(\"body\").GetComponent<MeshRenderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\ControllerPack\\ControllerDriverScript.cs",
+      "LineNumber": 57,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method VRManager.Update calls VRGameScene.ChangeScene(VRGameScene.SCENE_HOME) which eventually calls VRManager.Instance.VRGameUI.SwitchSceneUI(UIGroupType.Home, UIFormType.HomeMenuForm) which could impact performance. Cache the result from VRManager.Instance.VRGameUI.SwitchSceneUI(UIGroupType.Home, UIFormType.HomeMenuForm) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Manager\\VRManager.cs",
+      "LineNumber": 53,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method VRGameScene.ChangeScene(VRGameScene.SCENE_STORE) is called from VRManager.Update which could cause performance problems. Cache the result from VRGameScene.ChangeScene(VRGameScene.SCENE_STORE) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Manager\\VRManager.cs",
+      "LineNumber": 55,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method VRGameScene.ChangeScene(VRGameScene.SCENE_SETTINGS) is called from VRManager.Update which could cause performance problems. Cache the result from VRGameScene.ChangeScene(VRGameScene.SCENE_SETTINGS) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Manager\\VRManager.cs",
+      "LineNumber": 57,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method VRGameScene.ChangeScene(VRGameScene.SCENE_ME) is called from VRManager.Update which could cause performance problems. Cache the result from VRGameScene.ChangeScene(VRGameScene.SCENE_ME) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Manager\\VRManager.cs",
+      "LineNumber": 59,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method VRGameScene.ChangeScene(VRGameScene.SCENE_ACCOUNT) is called from VRManager.Update which could cause performance problems. Cache the result from VRGameScene.ChangeScene(VRGameScene.SCENE_ACCOUNT) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Manager\\VRManager.cs",
+      "LineNumber": 61,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'VRManager' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Manager\\VRManager.cs",
+      "LineNumber": 44,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GameObject.FindObjectsOfType<Canvas>() is called from ControllerInputModule1.Update which could cause performance problems. Cache the result from GameObject.FindObjectsOfType<Canvas>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\ControllerPack\\ControllerInputModule1.cs",
+      "LineNumber": 105,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method canvases[i].GetComponent<UIIgnoreRaycast>() is called from ControllerInputModule1.Update which could cause performance problems. Cache the result from canvases[i].GetComponent<UIIgnoreRaycast>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\ControllerPack\\ControllerInputModule1.cs",
+      "LineNumber": 109,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method RealtimeReflections.LateUpdate calls UpdateCubemap(faceMask) which eventually calls go.GetComponent<Camera>() which could impact performance. Cache the result from go.GetComponent<Camera>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\RealtimeReflections\\Scripts\\RealtimeReflections.cs",
+      "LineNumber": 46,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method UpdateCubemap(63) is called from RealtimeReflections.LateUpdate which could cause performance problems. Cache the result from UpdateCubemap(63) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\RealtimeReflections\\Scripts\\RealtimeReflections.cs",
+      "LineNumber": 50,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method ViveWebView.Update calls Call_UpdateVideoTexture() which eventually calls m_WebViewTexture.GetComponent<MeshRenderer>() which could impact performance. Cache the result from m_WebViewTexture.GetComponent<MeshRenderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Webview\\ViveWebView.cs",
+      "LineNumber": 122,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GetComponent<MeshFilter>() is called from Beam.Update which could cause performance problems. Cache the result from GetComponent<MeshFilter>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Extra\\Beam.cs",
+      "LineNumber": 86,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method AppDetailsPreviewListControl.Update calls Prev() which eventually calls ListUpdateView() which could impact performance. Cache the result from ListUpdateView() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\UI\\Control\\AppDetailsPreviewListControl.cs",
+      "LineNumber": 187,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method AppDetailsPreviewListControl.Update calls Next() which eventually calls ListUpdateView() which could impact performance. Cache the result from ListUpdateView() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\UI\\Control\\AppDetailsPreviewListControl.cs",
+      "LineNumber": 192,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GameObject.Find(\"WaveVR(Clone)/head\") is called from VRSurroundMe.LateUpdate which could cause performance problems. Cache the result from GameObject.Find(\"WaveVR(Clone)/head\") in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\UI\\Control\\VRSurroundMe.cs",
+      "LineNumber": 95,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method GetComponent<MeshFilter>() is called from WaveVR_Beam.Update which could cause performance problems. Cache the result from GetComponent<MeshFilter>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_Beam.cs",
+      "LineNumber": 172,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method WaveVR_ControllerPointer.Update calls initialPointer() which eventually calls GetComponent<Renderer>() which could impact performance. Cache the result from GetComponent<Renderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_ControllerPointer.cs",
+      "LineNumber": 80,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method WaveVR_ControllerPointer.Update calls removePointer() which eventually calls GetComponent<Renderer>() which could impact performance. Cache the result from GetComponent<Renderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_ControllerPointer.cs",
+      "LineNumber": 84,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method EventSystem.current.GetComponent<WaveVR_ControllerInputModule>() is called from WaveVR_FPS.LateUpdate which could cause performance problems. Cache the result from EventSystem.current.GetComponent<WaveVR_ControllerInputModule>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_FPS.cs",
+      "LineNumber": 40,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method EventSystem.current.GetComponent<WaveVR_ControllerInputModule>() is called from WaveVR_FPS.LateUpdate which could cause performance problems. Cache the result from EventSystem.current.GetComponent<WaveVR_ControllerInputModule>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_FPS.cs",
+      "LineNumber": 41,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method WaveVR_Init.Update calls processVREvent(vrevent) which eventually calls WaveVR_Render.Expand(WaveVR_Render.Instance) which could impact performance. Cache the result from WaveVR_Render.Expand(WaveVR_Render.Instance) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_Init.cs",
+      "LineNumber": 93,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method reticleObject.GetComponent<WaveVR_ControllerPointer>() is called from WaveVR_PointerCameraTracker.Update which could cause performance problems. Cache the result from reticleObject.GetComponent<WaveVR_ControllerPointer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_PointerCameraTracker.cs",
+      "LineNumber": 36,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method WaveVR_Reticle.Update calls initialReticle() which eventually calls CreateGazePointer() which could impact performance. Cache the result from CreateGazePointer() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_Reticle.cs",
+      "LineNumber": 115,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method gameObject.GetComponent<Renderer>() is called from WaveVR_Reticle.Update which could cause performance problems. Cache the result from gameObject.GetComponent<Renderer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_Reticle.cs",
+      "LineNumber": 192,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method WaveVR_ShowIndicator.Update calls createIndicator() which eventually calls transform.Find(partName) which could impact performance. Cache the result from transform.Find(partName) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_ShowIndicator.cs",
+      "LineNumber": 366,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method ci.DestObject.GetComponentsInChildren<TextMesh>() is called from WaveVR_ShowIndicator.Update which could cause performance problems. Cache the result from ci.DestObject.GetComponentsInChildren<TextMesh>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_ShowIndicator.cs",
+      "LineNumber": 425,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method ci.DestObject.GetComponentsInChildren<Transform>() is called from WaveVR_ShowIndicator.Update which could cause performance problems. Cache the result from ci.DestObject.GetComponentsInChildren<Transform>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_ShowIndicator.cs",
+      "LineNumber": 436,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method WaveVR_InputModuleManager.Update calls SetActiveGaze (false) which eventually calls CreateGazeInputModule () which could impact performance. Cache the result from CreateGazeInputModule () in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 354,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method WaveVR_InputModuleManager.Update calls renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, true) which eventually calls ctrlr.GetComponentInChildren<WaveVR_ControllerPointer>() which could impact performance. Cache the result from ctrlr.GetComponentInChildren<WaveVR_ControllerPointer>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 356,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, true) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, true) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 357,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method WaveVR_InputModuleManager.Update calls renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, true) which eventually calls ctrlr.GetComponentInChildren<WaveVR_Beam>() which could impact performance. Cache the result from ctrlr.GetComponentInChildren<WaveVR_Beam>() in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 358,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, true) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, true) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 359,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method SetActiveGaze (true) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from SetActiveGaze (true) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 363,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 365,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 366,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 367,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 368,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method SetActiveGaze (true) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from SetActiveGaze (true) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 373,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 375,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 376,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 377,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 378,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method SetActiveGaze (false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from SetActiveGaze (false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 382,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, true) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, true) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 384,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, true) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, true) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 385,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, true) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, true) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 386,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, true) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, true) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 387,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method SetActiveGaze (false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from SetActiveGaze (false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 390,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 392,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerPointer(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 393,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Left, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 394,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) is called from WaveVR_InputModuleManager.Update which could cause performance problems. Cache the result from renderControllerBeam(WVR_DeviceType.WVR_DeviceType_Controller_Right, false) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\EventSystem\\WaveVR_InputModuleManager.cs",
+      "LineNumber": 395,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0005",
+      "Message": "The method SeekBarCtrl.Update calls NcyUtility.Helper.ChangeTextContent(transform.parent,\r\n                    \"StartTime/Text\",\r\n                NcyUtility.Helper.FormatTime(m_srcVideo.GetSeekPosition())) which eventually calls root.Find(path) which could impact performance. Cache the result from root.Find(path) in Start or Awake instead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\SeekBarCtrl.cs",
+      "LineNumber": 64,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'WaveVR_ControllerLoader' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_ControllerLoader.cs",
+      "LineNumber": 399,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'WaveVR_ControllerListener' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Scripts\\WaveVR_ControllerListener.cs",
+      "LineNumber": 765,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'IndicatorLine' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\WaveVR\\Extra\\IndicatorLine.cs",
+      "LineNumber": 81,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'WebviewTrigger' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Webview\\SampleScene\\WebviewTrigger.cs",
+      "LineNumber": 27,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'PaymentTest' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportWebService\\PaymentTest.cs",
+      "LineNumber": 10,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'PaymentTest' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportWebService\\PaymentTest.cs",
+      "LineNumber": 16,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'MyViveportTest' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Common\\ViveportWebService\\MyViveportTest.cs",
+      "LineNumber": 43,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'HTCAccountClient' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\Viveport\\Account\\HTCAccountClient.cs",
+      "LineNumber": 97,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'CamRotate' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\RealtimeReflections\\Scenes\\Scripts\\CamRotate.cs",
+      "LineNumber": 11,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'VRGazeCustoms' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\Customs\\VRGazeCustoms.cs",
+      "LineNumber": 9,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'IMEWrapperMain' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\IME\\IMEWrapperMain.cs",
+      "LineNumber": 34,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'WalkToBounce' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\SixDofShow\\WalkToBounce.cs",
+      "LineNumber": 19,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'PaymentThirdPartyView' has an empty MonoBehaviour method 'OnDestroy'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\VR8\\UI\\Payment\\View\\PaymentThirdPartyView.cs",
+      "LineNumber": 53,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'PaymentSetSMSView' has an empty MonoBehaviour method 'OnDestroy'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\VR8\\UI\\Payment\\View\\PaymentSetSMSView.cs",
+      "LineNumber": 52,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'PaymentSendSMSView' has an empty MonoBehaviour method 'OnDestroy'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\VR8\\UI\\Payment\\View\\PaymentSendSMSView.cs",
+      "LineNumber": 32,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'EditorTest' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\UI\\Control\\EditorTest.cs",
+      "LineNumber": 12,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'PaymentPayView' has an empty MonoBehaviour method 'OnDestroy'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\VR8\\UI\\Payment\\View\\PaymentPayView.cs",
+      "LineNumber": 92,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'PaymentNumberView' has an empty MonoBehaviour method 'OnDestroy'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\VR8\\UI\\Payment\\View\\PaymentNumberView.cs",
+      "LineNumber": 66,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'PaymentMessageView' has an empty MonoBehaviour method 'OnDestroy'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\VR8\\UI\\Payment\\View\\PaymentMessageView.cs",
+      "LineNumber": 43,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'ItemForm' has an empty MonoBehaviour method 'OnDestroy'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\VR8\\UI\\Common\\ItemList\\ItemForm.cs",
+      "LineNumber": 16,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'InputView' has an empty MonoBehaviour method 'OnDestroy'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\VR8\\UI\\Common\\Input\\InputView.cs",
+      "LineNumber": 24,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'SwipeScrollScript' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Main\\Scripts\\UI\\SwipeScrollScript.cs",
+      "LineNumber": 20,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'FotaProxy' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\HtcFota\\FotaProxy.cs",
+      "LineNumber": 66,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'FotaProxy' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\HtcFota\\FotaProxy.cs",
+      "LineNumber": 73,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'TemplateScript' has an empty MonoBehaviour method 'Awake'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\NewScene\\Features\\Common\\Scripts\\TemplateScript.cs",
+      "LineNumber": 78,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'TemplateScript' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\NewScene\\Features\\Common\\Scripts\\TemplateScript.cs",
+      "LineNumber": 85,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'TemplateScript' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\NewScene\\Features\\Common\\Scripts\\TemplateScript.cs",
+      "LineNumber": 90,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'TemplateScript' has an empty MonoBehaviour method 'OnDisable'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\NewScene\\Features\\Common\\Scripts\\TemplateScript.cs",
+      "LineNumber": 104,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'TemplateScript' has an empty MonoBehaviour method 'OnValidate'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\NewScene\\Features\\Common\\Scripts\\TemplateScript.cs",
+      "LineNumber": 109,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'ViveLogoController' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\OOBE\\Scripts\\ViveLogoController.cs",
+      "LineNumber": 39,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'FocusOobeVoiceManager' has an empty MonoBehaviour method 'Start'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\OOBE\\Scripts\\FocusOobeVoiceManager.cs",
+      "LineNumber": 19,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'LevelLoader' has an empty MonoBehaviour method 'Awake'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Overlay\\Scripts\\LevelLoader.cs",
+      "LineNumber": 14,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'LevelLoader' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\Overlay\\Scripts\\LevelLoader.cs",
+      "LineNumber": 84,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'TMP_Link' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\TextMesh Pro\\Extra\\TMP_Link.cs",
+      "LineNumber": 22,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'SphereMirror' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\SphereMirror.cs",
+      "LineNumber": 18,
+      "Severity": 2
+    },
+    {
+      "Id": "UEA0003",
+      "Message": "'MediaPlayerEvent' has an empty MonoBehaviour method 'Update'. Empty MonoBehaviour methods causes some overhead.",
+      "FileName": "D:\\JenkinsWorkspace\\ViveportM_Piepline_test\\ViveportM\\source\\Main\\Assets\\ThirdPlugins\\EasyMovieTexture\\Scripts\\MediaPlayerEvent.cs",
+      "LineNumber": 20,
+      "Severity": 2
+    }]}
