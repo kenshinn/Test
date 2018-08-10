@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         fgo otk save load
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @namespace    https://kenshinn.blogspot.com/
+// @version      0.2
 // @description  try to take over the world!
 // @author       You
 // @match        http://f23ko.com/program/final_otk.html
@@ -48,9 +48,15 @@ function saveBox() {
         t.setAttribute("selectedIndex", t.selectedIndex);
     });
 
+    var selects = [];
+    var selectedItem = $("#box-team select");
+    for(var i = 0; i < selectedItem.length; i++) {
+        selects.push(selectedItem[i].selectedIndex);
+    }
+
     localStorage.setItem("box-svt", $("#box-svt")[0].innerHTML);
     localStorage.setItem("box-craft", $("#box-craft")[0].innerHTML);
-    localStorage.setItem("box-team", $("#box-team")[0].innerHTML);
+    localStorage.setItem("selected", JSON.stringify(selects));
 
     alert("save ok");
 }
@@ -98,7 +104,45 @@ function loadBox() {
 //    });
 
     update_config_svt();
-    update_config_craft()
+    update_config_craft();
+
+    var dom = $("#box-svt");
+  dom.find(".svt-name").each(function(i, e) {
+      $(e).change(update_svt_nickname.bind(null,i+1)).keyup(update_svt_nickname.bind(null,i+1)).click(update_svt_nickname.bind(null,i+1));
+  });
+  dom.find(".svt-type").each(function(i, e) {
+      $(e).click(select_svt.bind(null,i+1)).keyup(select_svt.bind(null,i+1)).change(select_svt.bind(null,i+1));
+  });
+  dom.find(".svt-del").each(function(i, e) {
+      $(e).click(del_svt.bind(null,i+1));
+  });
+  dom.find(".svt-atk,.svt-friend_lv,.svt-n_lv").click(update_battle_summary).keyup(update_battle_summary).change(update_battle_summary);
+
+    dom = $("#box-craft");
+    dom.find(".craft-name").each(function(i, e){
+        $(e).change(update_craft_nickname.bind(null,i+1)).keyup(update_craft_nickname.bind(null,i+1)).click(update_craft_nickname.bind(null,i+1));
+    });
+  dom.find(".craft-type").each(function(i, e) {
+      $(e).click(select_craft.bind(null,i+1)).keyup(select_craft.bind(null,i+1)).change(select_craft.bind(null,i+1));
+  });
+  dom.find(".craft-del").each(function(i, e) {
+      $(e).click(del_craft.bind(null,i+1));
+  });
+
+  dom.find(".craft-atk").click(update_battle_summary).keyup(update_battle_summary).change(update_battle_summary);
+
+    $("#btn-add-svt").click(add_svt);
+    $("#btn-add-craft").click(add_craft);
+
+    var selects = JSON.parse(localStorage.getItem("selected"));
+    var selectedItem = $("#box-team select");
+
+    if(selects != null) {
+        for(var i = 0;i < selects.length; i++) {
+            selectedItem[i].selectedIndex = selects[i];
+        }
+        $("#box-team select")[0].click();
+    }
 
     alert("load ok");
 }
