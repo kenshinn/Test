@@ -1,0 +1,7 @@
+用 chrome developer 將下面兩個資料記錄下來
+localStorage.getItem("box-svt")  // 從者資料
+localStorage.getItem("box-craft")  // 禮裝資料
+
+在另一台
+localStorage.setItem("box-svt", [從者資料])
+localStorage.setItem("box-craft", [禮裝資料])
