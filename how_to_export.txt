@@ -5,3 +5,5 @@ localStorage.getItem("box-craft")  // 禮裝資料
 在另一台
 localStorage.setItem("box-svt", [從者資料])
 localStorage.setItem("box-craft", [禮裝資料])
+
+
