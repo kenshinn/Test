@@ -58,7 +58,7 @@ function saveBox() {
 function loadBox() {
     $("#box-svt")[0].innerHTML = localStorage.getItem("box-svt");
     $("#box-craft")[0].innerHTML = localStorage.getItem("box-craft");
-    $("#box-team")[0].innerHTML = localStorage.getItem("box-team");
+//    $("#box-team")[0].innerHTML = localStorage.getItem("box-team");
 
     $("#box-svt input[type='text']").each(function (index, t ){
         t.value = t.getAttribute("value");
@@ -84,17 +84,21 @@ function loadBox() {
         t.selectedIndex = t.getAttribute("selectedIndex");
     });
 
-    $("#box-team input[type='text']").each(function (index, t ){
-        t.value = t.getAttribute("value");
-    });
 
-    $("#box-team input[type='number']").each(function (index, t ){
-        t.value = t.getAttribute("value");
-    });
+//    $("#box-team input[type='text']").each(function (index, t ){
+//        t.value = t.getAttribute("value");
+//    });
 
-    $("#box-team select").each(function (index, t ){
-        t.selectedIndex = t.getAttribute("selectedIndex");
-    });
+//    $("#box-team input[type='number']").each(function (index, t ){
+//        t.value = t.getAttribute("value");
+//    });
+
+//    $("#box-team select").each(function (index, t ){
+//        t.selectedIndex = t.getAttribute("selectedIndex");
+//    });
+
+    update_config_svt();
+    update_config_craft()
 
     alert("load ok");
 }
