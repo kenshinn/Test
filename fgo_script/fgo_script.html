@@ -15,10 +15,12 @@
             console.log("b_click");
             console.log("e.clientX: " + e.clientX);
             console.log("e.clientY: " + e.clientY);
+            console.log("e.offsetX: " + e.offsetX);
+            console.log("e.offsetY: " + e.offsetY);            
             console.log("e.target.clientWidth: " + e.target.clientWidth);
             console.log("e.target.clientHeight: " + e.target.clientHeight);
-            var r_width = Math.round(e.clientX * e.target.naturalWidth / e.target.clientWidth);
-            var r_Height = Math.round(e.clientY * e.target.naturalHeight / e.target.clientHeight);
+            var r_width = Math.round(e.offsetX * e.target.naturalWidth / e.target.clientWidth);
+            var r_Height = Math.round(e.offsetY * e.target.naturalHeight / e.target.clientHeight);
             appendResultLine("adb shell input tap " + r_width + " " + r_Height);
             if(is_autoAddSleep) {
                 appendResultLine("sleep " + sleep_time.value);
