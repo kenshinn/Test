@@ -29,6 +29,9 @@
             console.log("b_init");
             t_result = document.getElementById("t_result");
             document.getElementById("b1").addEventListener("click", b_click, null);
+            document.getElementById("b2").addEventListener("click", b_click, null);
+            document.getElementById("b3").addEventListener("click", b_click, null);
+            document.getElementById("b4").addEventListener("click", b_click, null);
             document.getElementById("b_autoAddSleep").addEventListener("change", autoCheckChange, null);
             sleep_time = document.forms[0].sleep_time;
         }
@@ -48,6 +51,9 @@
 </head>
 <body onload="b_init()">
     <img id="b1" src="b1.png" class="b_img"  />
+    <img id="b2" src="b2.png" class="b_img"  />
+    <img id="b3" src="b3.png" class="b_img"  />
+    <img id="b4" src="b4.png" class="b_img"  />
     <br />
     <form id ="b_form" >
     <input type="checkbox" value="auto add sleep" id="b_autoAddSleep" checked>auto add sleep</input>
