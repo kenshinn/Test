@@ -1,0 +1,26 @@
+// ==UserScript==
+// @name         tixcraft auto enter
+// @namespace    https://kenshinnn.blogspot.tw
+// @version      0.5
+// @description  自動進入拓元購票頁
+// @author       Kenshinn
+// @match        https://tixcraft.com/activity/detail/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    var row = 1; // 第n筆項目, 從1 開始
+    var time_delayed = 100; // 進入頁面後執行的時間，網速慢時可能需要加大
+
+
+
+    var _k_click = function() {
+        document.querySelector("#content > div > div > ul > li:nth-child(1) > a").click();
+        setTimeout(function() {
+            document.querySelector("#gameList > table > tbody > tr:nth-child(" + row + ") > td.gridc > input").click();
+        },500);
+    }
+
+    setTimeout(_k_click, time_delayed);
+})();
