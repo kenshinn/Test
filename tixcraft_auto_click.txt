@@ -1,0 +1,29 @@
+// ==UserScript==
+// @name         tixcraft auto click
+// @namespace    https://kenshinnn.blogspot.tw
+// @version      0.5
+// @description  自動點擊同意及張數
+// @author       Kenshinn
+// @match        https://tixcraft.com/ticket/ticket/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    var row = 0; // 第n筆項目, 從0 開始
+    var n = 2; // 張數
+    var time_delayed = 100; // 進入頁面後執行的時間，網速慢時可能需要加大
+
+    var _k_click = function() {
+        // 第 row 項買 n 張
+        document.querySelectorAll("select")[row].selectedIndex = n;
+
+        // 勾選同意
+        document.querySelector("#TicketForm_agree").click();
+
+        // 驗證碼 focus
+        document.querySelector("#TicketForm_verifyCode").focus();
+    }
+
+    setTimeout(_k_click, time_delayed);
+})();
