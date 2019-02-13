@@ -1,0 +1,35 @@
+// ==UserScript==
+// @name         搶課
+// @namespace    https://kenshinnn.blogspot.tw
+// @version      0.1
+// @description  自動填資料
+// @author       You
+// @match        https://www.beclass.com/rid=22413ac5c495efe3d268*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    var name = '黃中天'; // 姓名
+    var email='aaa@bbb.cc'; // email
+    var phone='09xxx111111'; // 電話
+    var classNum='30903'; // 班級
+    var num = 4; // 第幾個課程 (從 0 開始)
+    // Your code here...
+
+    var k_func = function() {
+    var dd = document.getElementById('beclassmainframe').contentWindow.document;
+
+    dd.querySelector('input[type="checkbox"]').checked=true;
+    dd.querySelector('#username').value=name;
+    dd.querySelector('#email').value=email;
+    dd.querySelector('#mobile').value=phone;
+    dd.querySelector('#tb_extra_0').value=classNum;
+    dd.querySelectorAll('input[type="radio"]')[num].checked=true;
+    };
+
+    setTimeout(k_func, 500);
+
+
+})();
