@@ -11,11 +11,47 @@
 (function() {
     'use strict';
 
-    var name = '黃中天'; // 姓名
+    let pars = new URLSearchParams(window.location.search);
+    let z = pars.get('__z');
+
+    if(z == null) return;
+
+
     var email='aaa@bbb.cc'; // email
     var phone='09xxx111111'; // 電話
-    var classNum='30903'; // 班級
-    var num = 4; // 第幾個課程 (從 0 開始)
+    var classNum=''; // 班級
+    var num = 0; // 第幾個課程 (從 0 開始)
+    var name = ''; // 姓名
+
+    switch(z)
+    {
+        case 'b1': // 喬鈞1
+            name='黃喬鈞';
+            num=1;
+            break;
+        case 'b2': // 喬鈞2
+            name='黃喬鈞';
+            num=2;
+            break;
+        case 'b3': // 喬鈞3
+            name='黃喬鈞';
+            num=3;
+            break;
+        case 'g1': // 以喬1
+            name='黃以喬';
+            num=1;
+            break;
+        case 'g2': // 以喬2
+            name='黃以喬';
+            num=2;
+            break;
+        case 'g3': // 以喬3
+            name='黃以喬';
+            num=3;
+            break;
+    }
+
+
     // Your code here...
 
     var k_func = function() {
