@@ -19,7 +19,7 @@
 
     var email='jennyhuizhen@gmail.com'; // email
     var phone='0920337109'; // 電話
-    var classNum=''; // 班級
+    var classNum='30312'; // 班級
     var num = 0; // 第幾個課程 (從 0 開始)
     var name = ''; // 姓名
 
