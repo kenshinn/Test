@@ -4,15 +4,17 @@
 <head>
     <script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js" ></script>
     <script type="text/javascript">
-        var aLink = document.getElementById("testLink");
-        aLink.addEventListener('click', function(e) {
-            wx.miniProgram.navigateTo({url: "two.html"});
-            e.preventDefault();
-        }, false);
+        function ready() {
+            var aLink = document.getElementById("testLink");
+            aLink.addEventListener('click', function(e) {
+                wx.miniProgram.navigateTo({url: "two.html"});
+                e.preventDefault();
+            }, false);
+        }
     </script>
 </head>
 
-<body>
+<body onload="ready()">
     <h1> This is 1 (v2)</h1> <br />
     <h2> <a href="one.html">1.1</a></h2>
     <h2> <a href="two.html" id="testLink">1.2</a></h2>
