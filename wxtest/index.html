@@ -5,19 +5,32 @@
     <script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js" ></script>
     <script type="text/javascript">
         function ready() {
+                if (/MicroMessenger/i.test(navigator.userAgent)) {
+            //ios的ua中无miniProgram，很坑爹,但都有MicroMessenger（表示是微信浏览器）
+                wx.miniProgram.getEnv((res)=>{
+                    if (res.miniprogram) {
+                        handleMiniProgram();
+                    } 
+                })
+            }            
+            console.log("ready");
+        }
+
+        function handleMiniProgram() {
+            console.log("handleMiniProgram");
             var aLink = document.getElementById("testLink");
             aLink.addEventListener('click', function(e) {
                 console.log("click link");
                 wx.miniProgram.navigateTo({url: "index?weburl=two.html"});
                 e.preventDefault();
             }, false);
-            console.log("ready");
+
         }
     </script>
 </head>
 
 <body onload="ready();">
-    <h1> This is 1 (v4)</h1> <br />
+    <h1> This is 1 (v5)</h1> <br />
     <h2> <a href="one.html">1.1</a></h2>
     <h2> <a href="two.html" id="testLink">1.2</a></h2>
 </body>
