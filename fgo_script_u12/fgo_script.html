@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />    
+    <title>Page Title</title>    
+    <style>
+        .b_img { width:20%; height:20% }
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1687977977936849",
+          enable_page_level_ads: true
+     });
+</script>    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1220371-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+   gtag('config', 'UA-1220371-3');
+</script>    
+    
+    <script>
+        var t_result;
+        var is_autoAddSleep = true;
+        var sleep_time;
+        var p_width;
+        var p_height;
+        function b_click(e) {
+            console.log("b_click");
+            console.log("e.clientX: " + e.clientX);
+            console.log("e.clientY: " + e.clientY);
+            console.log("e.offsetX: " + e.offsetX);
+            console.log("e.offsetY: " + e.offsetY);            
+            console.log("e.target.clientWidth: " + e.target.clientWidth);
+            console.log("e.target.clientHeight: " + e.target.clientHeight);
+            var r_width = Math.round(e.offsetX * p_width.value / e.target.clientWidth);
+            var r_Height = Math.round(e.offsetY * p_height.value / e.target.clientHeight);
+            appendResultLine("adb shell input tap " + r_width + " " + r_Height);
+            if(is_autoAddSleep) {
+                appendResultLine("sleep " + sleep_time.value);
+            }
+        }
+        function b_init() {
+            console.log("b_init");
+            t_result = document.getElementById("t_result");
+            p_width = document.getElementById("p_width");
+            p_height = document.getElementById("p_height");
+            var b1 = document.getElementById("b1");
+            p_width.value = b1.naturalWidth;
+            p_height.value = b1.naturalHeight;
+
+            document.getElementById("b1").addEventListener("click", b_click, null);
+            document.getElementById("b2").addEventListener("click", b_click, null);
+            document.getElementById("b3").addEventListener("click", b_click, null);
+            document.getElementById("b4").addEventListener("click", b_click, null);
+            document.getElementById("b_autoAddSleep").addEventListener("change", autoCheckChange, null);
+            
+            sleep_time = document.forms[0].sleep_time;
+
+            document.getElementById("b_file").addEventListener("change", handleFile, null);
+
+        }
+        function autoCheckChange() {
+            is_autoAddSleep = !is_autoAddSleep;
+        }
+        function appendResult(str) {
+            t_result.value += str;
+        }
+        function appendResultLine(str) {
+            t_result.value += (str + "\n");
+        }
+
+        function handleFile(e) {    
+        
+            var fr = new FileReader();
+            fr.onload = function () {
+                var b1 = document.getElementById("b1");
+                b1.src = fr.result;            
+                setTimeout(function() {
+                    p_width.value = b1.naturalWidth;
+                    p_height.value = b1.naturalHeight;
+                },100);    
+
+            }
+            fr.readAsDataURL(e.target.files[0]);
+
+        }
+    </script>
+</head>
+<body onload="b_init()">
+    <input type="file" id="b_file" >更換第一張圖片 </input>
+    <br />
+    <img id="b1" src="b1.png" class="b_img"  />
+    <img id="b2" src="b2.png" class="b_img"  />
+    <img id="b3" src="b3.png" class="b_img"  />
+    <img id="b4" src="b4.png" class="b_img"  />
+    <br />
+    <form id ="b_form" onsubmit="return false;">
+    <input type="checkbox" value="auto add sleep" id="b_autoAddSleep" checked>auto add sleep</input>
+    <input type ="radio" name="sleep_time" value="1">1 </input>
+    <input type ="radio" name="sleep_time" value="2">2</input>
+    <input type ="radio" name="sleep_time" value="3" checked>3</input>
+    <input type ="radio" name="sleep_time" value="5" >5</input>
+    <input type ="radio" name="sleep_time" value="10" >10</input>
+    <input type ="radio" name="sleep_time" value="20" >20</input>
+    <input type ="radio" name="sleep_time" value="25" >25</input>
+    <input type ="radio" name="sleep_time" value="30">30</input>
+    <input type ="radio" name="sleep_time" value="35" >35</input>
+    <br />實際寬高： <input type="number" id="p_width" value="2560"/> X <input type="number" id="p_height" value="1440" /> 
+    <br />請依動作後給予相對的恢復時間，寶具請給長一點
+    <br /> Windows 請用 powershell 執行, mac 可直接在終端機執行
+    </form>
+    <br />
+    <textarea id="t_result" cols=80; rows=40></textarea>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90, 已建立 2007/12/14 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1687977977936849"
+     data-ad-slot="7394839850"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>
