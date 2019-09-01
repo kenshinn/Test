@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         搶課
 // @namespace    https://kenshinnn.blogspot.tw
-// @version      0.2
+// @version      0.1
 // @description  自動填資料
 // @author       You
 // @match        https://www.beclass.com/rid=234166a5d638c22f164d*
@@ -15,11 +15,12 @@
     let z = pars.get('__z');
 
     if(z == null) return;
+    console.log("z=" + z);
 
 
     var email='jennyhuizhen@gmail.com'; // email
     var phone='0920337109'; // 電話
-    var classNum='30312'; // 班級
+    var classNum; // 班級, 今年不同班了
     var num = 0; // 第幾個課程 (從 0 開始)
     var name = ''; // 姓名
 
@@ -27,27 +28,23 @@
     {
         case 'b1': // 喬鈞1
             name='黃喬鈞';
-            num=7;
+            num=33; // 桌球(週三班)
+            classNum='40312';
             break;
         case 'b2': // 喬鈞2
             name='黃喬鈞';
-            num=13;
-            break;
-        case 'b3': // 喬鈞3
-            name='黃喬鈞';
-            num=21;
+            num=30; // 體操社 (週五班)
+            classNum='40312';
             break;
         case 'g1': // 以喬1
             name='黃以喬';
-            num=7;
+            num=33; // 桌球(週三班)
+            classNum='40325';
             break;
         case 'g2': // 以喬2
             name='黃以喬';
-            num=13;
-            break;
-        case 'g3': // 以喬3
-            name='黃以喬';
-            num=21;
+            num=30; // 體操社 (週五班)
+            classNum='40325';
             break;
     }
 
