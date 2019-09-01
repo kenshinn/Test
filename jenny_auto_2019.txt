@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  自動填資料
 // @author       You
-// @match        https://www.beclass.com/rid=22413ac5c495efe3d268*
+// @match        https://www.beclass.com/rid=234166a5d638c22f164d*
 // @grant        none
 // ==/UserScript==
 
