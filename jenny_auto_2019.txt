@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         搶課
+// @name         搶課2019
 // @namespace    https://kenshinnn.blogspot.tw
 // @version      0.1
 // @description  自動填資料
