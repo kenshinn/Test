@@ -2,13 +2,43 @@
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script type="text/javascript">
-        // function showModel() {
-        //   alert('model is ' + _return_model);
-        // }
+        class rnMessage {
+            constructor(act, returnObjName, data) {
+                this.act = act; // string
+                this.returnObjName = returnObjName; // string
+                this.data = data; // string
+            }
+        }
+
+        class rnReturnObj {
+            constructor(onCallback, onError) {
+                this.returnValue = null; // return value will send by react
+                this.onCallback = onCallback;
+                this.errorMsg = null; // errorMsg will send by react
+                this.onError = onError;
+            }
+        }
+
+        function onLoad() {
+            console.log('onLoad');
+            if(window.ReactNativeWebView != undefined) {
+                var objName = 'msg_' + Date.now();
+                window[objName] = new rnReturnObj(
+                    function () { // callbackFunction
+                        alert('get token: ' + this.returnValue);
+                    }, 
+                    function () {
+                        alert('get error: ' + this.errorMsg);
+                    }
+                );
+                var msg = new rnMessage('getToken', objName);
+                window.ReactNativeWebView.postMessage(JSON.stringify(msg));
+            }
+        }
       </script>
     </head>
 
-    <body>
+    <body onload="onLoad()">
       <p>This is React test</p>
     </body>
 </html>
