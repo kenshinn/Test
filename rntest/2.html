@@ -1,0 +1,42 @@
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script type="text/javascript">
+    var rnMessage = function(act, returnObjName, data) {            
+        this.act = act; // string
+        this.returnObjName = returnObjName; // string
+        this.data = data; // string            
+    };
+
+    var rnReturnObj = function(onCallback, onError) {            
+        this.returnValue = null; // return value will send by react
+        this.onCallback = onCallback;
+        this.errorMsg = null; // errorMsg will send by react
+        this.onError = onError;            
+    };
+
+        function onLoad() {
+            console.log('onLoad');
+            if(window.aaReactNativeWebView != undefined) {
+                var objName = 'msg_' + Date.now();
+                window[objName] = new rnReturnObj(
+                    function () { // callbackFunction
+                        alert('get token: ' + this.returnValue);
+                        window[objName] = null; // release object
+                    }, 
+                    function () {
+                        alert('get error: ' + this.errorMsg);
+                        window[objName] = null; // release object
+                    }
+                );
+                var msg = new rnMessage('getToken', objName);
+                window.ReactNativeWebView.postMessage(JSON.stringify(msg));
+            }
+        }
+      </script>
+    </head>
+
+    <body onload="window.setTimeout(onLoad, 500)">
+      <p>This is React test</p>
+    </body>
+</html>
