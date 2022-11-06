@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KKTIX auto check
 // @namespace    https://kenshinnn.blogspot.tw
-// @version      0.5
+// @version      0.6
 // @description  自動勾選kktix權利說明
 // @author       Kenshinn
 // @match        https://kktix.com/events/*
@@ -11,7 +11,7 @@
 (function() {
     'use strict';
     var row = 0; // 第n筆項目
-    var count = 2; // 買幾筆    
+    var count = 1; // 買幾筆
     var time_delayed = 100; // 進入頁面後執行的時間，網速慢時可能需要加大
     var autoClickNext = true;  // 是否自動點擊下一步
     // Your code here...
@@ -22,6 +22,7 @@
         var _k_p_button = document.querySelectorAll(".ticket-unit .display-table-row button.btn-default.plus")[row];
         var _k_next = document.querySelector("button.btn.btn-primary");
         
+        
         if(!_k_agree || _k_agree === null || _k_agree.click === null || !_k_text || _k_text === null || !_k_p_button || _k_p_button === null || !_k_next || _k_next === null) {
             setTimeout(_k_click, time_delayed);
             return;
@@ -31,10 +32,17 @@
             _k_agree.click();  
         }
 
+
+
         if(!_k_agree.checked) {
             setTimeout(_k_click, time_delayed);
             return;
         }
+
+
+
+
+
         
 //        if(_k_p_button.click === null) {
 //            setTimeout(_k_click, time_delayed);
@@ -50,8 +58,17 @@
         document.body.scrollTop = document.body.scrollHeight;
         
         var isOk = _k_text.value >= count;
-        
-        if(autoClickNext && isOk) {
+
+        _k_next.scrollIntoView();
+
+        var _k_question = document.querySelector(".custom-captcha-inner input");
+        console.log("_k_question: " + _k_question);
+
+        if(_k_question != null) {
+            _k_question.value="B2";
+        }
+
+        if(autoClickNext && isOk) {            
             _k_next.click();
         }
     };
