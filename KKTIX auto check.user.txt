@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KKTIX auto check
 // @namespace    https://kenshinnn.blogspot.tw
-// @version      0.6
+// @version      0.7
 // @description  自動勾選kktix權利說明
 // @author       Kenshinn
 // @match        https://kktix.com/events/*
@@ -14,6 +14,7 @@
     var count = 1; // 買幾筆
     var time_delayed = 100; // 進入頁面後執行的時間，網速慢時可能需要加大
     var autoClickNext = true;  // 是否自動點擊下一步
+    var answer = "20221118";
     // Your code here...
     
     var _k_click = function() {
@@ -65,7 +66,13 @@
         console.log("_k_question: " + _k_question);
 
         if(_k_question != null) {
-            _k_question.value="B2";
+            _k_question.value=answer;
+            var event = new Event('input', {
+                bubbles: true,
+                cancelable: true,
+            });
+
+            _k_question.dispatchEvent(event);
         }
 
         if(autoClickNext && isOk) {            
