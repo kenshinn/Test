@@ -1,85 +1,169 @@
 // ==UserScript==
 // @name         KKTIX auto check
 // @namespace    https://kenshinnn.blogspot.tw
-// @version      0.8
+// @version      0.9
 // @description  自動勾選kktix權利說明
 // @author       Kenshinn
 // @match        https://kktix.com/events/*
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
-    var row = 0; // 第n筆項目
-    var count = 1; // 買幾筆
-    var time_delayed = 100; // 進入頁面後執行的時間，網速慢時可能需要加大
-    var autoClickNext = true;  // 是否自動點擊下一步
-    var answer = "A1|B2|C3|20221110";
-    // Your code here...
-    
-    var _k_click = function() {
-        var _k_agree = document.querySelector("#person_agree_terms");
-        var _k_text = document.querySelectorAll(".ticket-unit .display-table-row input[type='text']")[row];
-        var _k_p_button = document.querySelectorAll(".ticket-unit .display-table-row button.btn-default.plus")[row];
-        var _k_next = document.querySelector("button.btn.btn-primary");
-        
-        
-        if(!_k_agree || _k_agree === null || _k_agree.click === null || !_k_text || _k_text === null || !_k_p_button || _k_p_button === null || !_k_next || _k_next === null) {
-            setTimeout(_k_click, time_delayed);
-            return;
-        }
-        
-        if(!_k_agree.checked) {
-            _k_agree.click();  
-        }
+(function () {
+  "use strict";
+  var row = 0; // 第n筆項目
+  var count = 2; // 買幾筆
+  var time_delayed = 100; // 進入頁面後執行的時間，網速慢時可能需要加大
+  var autoClickNext = true; // 是否自動點擊下一步
+  var autoTryAnswer = true; // 是否自動填答案
+  var knownAnswer = ""; // 確定的答案 初始請留空
+  var definedAnswer = "20230513|0513"; // 演出日期 可能帶年 OR 不帶
+  var artistName1 = "Earth"; //藝人名稱  用來濾掉題目中不為答案選項的英文
+  var artistName2 = "Mix"; //藝人名稱  用來濾掉題目中不為答案選項的英文
+  var arrayaz = "abcdefghijklmnopqrstuvwxyz".split("");
+  var arrayAZ = "abcdefghijklmnopqrstuvwxyz"?.toUpperCase().split("");
+  var array09 = [...Array(10).keys()];
+  var randomAnswer = [
+    ...arrayAZ.flatMap((d) => arrayaz.map((v) => d + v)),
+    ...arrayAZ.flatMap((d) => array09.map((v) => d + v)),
+    ...arrayaz.flatMap((d) => arrayAZ.map((v) => d + v)),
+    ...arrayaz.flatMap((d) => array09.map((v) => d + v)),
+    ...array09.flatMap((d) => arrayaz.map((v) => d + v)),
+    ...array09.flatMap((d) => arrayAZ.map((v) => d + v)),
+  ];
 
+  var items = definedAnswer.split("|");
 
+  var _k_question;
+  var _k_next;
+  var _k_question_text;
+  var index = 0;
 
-        if(!_k_agree.checked) {
-            setTimeout(_k_click, time_delayed);
-            return;
-        }
+  var _k_click = () => {
+    var _k_agree = document.querySelector("#person_agree_terms");
+    var _k_text = document.querySelectorAll(
+      ".ticket-unit .display-table-row input[type='text']"
+    )[row];
+    var _k_p_button = document.querySelectorAll(
+      ".ticket-unit .display-table-row button.btn-default.plus"
+    )[row];
+    _k_next = document.querySelector(
+      "button.btn.btn-primary.btn-lg.ng-isolate-scope"
+    );
 
+    if (
+      !_k_agree ||
+      _k_agree === null ||
+      _k_agree.click === null ||
+      !_k_text ||
+      _k_text === null ||
+      !_k_p_button ||
+      _k_p_button === null ||
+      !_k_next ||
+      _k_next === null
+    ) {
+      setTimeout(_k_click, time_delayed);
+      return;
+    }
 
+    if (!_k_agree.checked) {
+      _k_agree.click();
+    }
 
+    if (!_k_agree.checked) {
+      setTimeout(_k_click, time_delayed);
+      return;
+    }
 
+    for (var i = 0; i < count; i++) {
+      if (_k_p_button !== null && _k_p_button.click !== null) {
+        _k_p_button.click();
+      }
+    }
 
-        
-//        if(_k_p_button.click === null) {
-//            setTimeout(_k_click, time_delayed);
-//            return;            
-//        }
+    document.body.scrollTop = document.body.scrollHeight;
 
-        for(var i = 0; i < count; i++) {            
-            if(_k_p_button !== null && _k_p_button.click !== null) {
-                _k_p_button.click();
-            }
-        }
-        
-        document.body.scrollTop = document.body.scrollHeight;
-        
-        var isOk = _k_text.value >= count;
+    var isOk = _k_text.value >= count;
 
-        _k_next.scrollIntoView();
+    _k_next.scrollIntoView();
+    _k_question = document.querySelector(".custom-captcha-inner input");
+    _k_question_text = document.querySelector(
+      ".custom-captcha-inner p"
+    )?.innerHTML;
 
-        var _k_question = document.querySelector(".custom-captcha-inner input");
-        console.log("_k_question: " + _k_question);
+    if (_k_question != null) {
+      if (knownAnswer !== "") {
+        items = [knownAnswer];
+      } else if (_k_question_text?.indexOf("演出日期") === -1) {
+        items = randomAnswer;
+      }
 
-        if(_k_question != null) {
-            var items  = answer.split('|');
-            _k_question.value=items[items.length * Math.random() | 0];
-            var event = new Event('input', {
-                bubbles: true,
-                cancelable: true,
-            });
+      _tryAnswer();
+    } else {
+      if (autoClickNext && isOk) {
+        _k_next.click();
+      }
+    }
+  };
 
-            _k_question.dispatchEvent(event);
-        }
+  var _shouldTry = function () {
+    if (!autoTryAnswer) {
+      return false;
+    }
+    if (knownAnswer !== "") {
+      return true;
+    }
+    if (_k_question_text?.indexOf("演出日期") !== -1) {
+      return true;
+    }
+    if (_k_question_text?.split("【")?.length >= 4) {
+      return _k_question_text?.indexOf(`【${randomAnswer[index]}`) !== -1;
+    } else if (_k_question_text?.split("）")?.length >= 4) {
+      return _k_question_text?.indexOf(`${randomAnswer[index]}）`) !== -1;
+    } else if (_k_question_text?.split(")")?.length >= 4) {
+      return _k_question_text?.indexOf(`${randomAnswer[index]})`) !== -1;
+    } else if (_k_question_text?.split(".")?.length >= 4) {
+      return _k_question_text?.indexOf(`${randomAnswer[index]}.`) !== -1;
+    } else {
+      return (
+        _k_question_text
+          ?.replace(artistName1, "")
+          ?.replace(artistName2, "")
+          ?.indexOf(randomAnswer[index]) !== -1
+      );
+    }
+  };
 
-        if(autoClickNext && isOk) {            
-            _k_next.click();
-        }
-    };
-    
-    setTimeout(_k_click, time_delayed);
+  var _tryAnswer = function () {
+    if (_shouldTry()) {
+      //console.log("try:", items[index]);
+      _k_question.value = items[index];
+
+      var event = new Event("input", {
+        bubbles: true,
+        cancelable: true,
+      });
+
+      _k_question.dispatchEvent(event);
+      _k_next.click();
+
+      setTimeout(_checkAnswer, 200);
+    } else {
+      index++;
+      if (index < items.length) {
+        _tryAnswer();
+      }
+    }
+  };
+
+  var _checkAnswer = function () {
+    if (_k_question?.placeholder?.indexOf("錯誤") !== -1) {
+      console.log("answer wrong, try next!");
+    }
+    index++;
+    if (index < items.length) {
+      _tryAnswer();
+    }
+  };
+
+  setTimeout(_k_click, time_delayed);
 })();
