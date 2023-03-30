@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"><html>
+<head>
+  <script type="text/javascript">
+    function onLoad() {
+      if(window.flutterWebview != undefined) {
+        flutterWebview.onmessage = function(event) {
+  // prints "Got it!" when we receive the app's response.
+          alert("onmessage:" + event.data);
+}
+      }
+    }
+    
+    function test() {
+      if(window.flutterWebview != undefined) {
+        flutterWebview.postMessage("haha");
+      }
+    }
+  </script>
+</head>
+
+<body onload="window.setTimeout(onLoad, 200)">
+  <input type="button" onClick="test()">test</input>
+<hr>
+</body>
+</html>
