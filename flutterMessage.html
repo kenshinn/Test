@@ -40,6 +40,28 @@ function test3() {
   });    
       }
 }
+    
+
+    
+function test4() {
+    if (window.flutterWebview != undefined) {
+        var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
+        fetch(imageUrl)
+            .then((response) => response.blob())
+            .then(function(myBlob) {
+                    var reader = new FileReader();
+
+                    reader.onloadend = function() {
+                        var base64String = reader.result;
+                        flutterWebview.postMessage(JSON.stringify({
+                            feature: 'blob',
+                            data: base64String
+                        }));
+                    }
+                    reader.readAsDataURL(blob);                
+            });
+    }
+}  
       
   </script>
 </head>
