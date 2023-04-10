@@ -17,11 +17,26 @@
         flutterWebview.postMessage("haha");
       }
     }
+    
+    function test2() {
+      if(window.flutterWebview != undefined) {
+        var imageUrl = "https://www.gtv.com.tw/Program/P1973010101/images/cast01.png";
+        fetch(imageUrl)
+  .then((response) => response.blob())
+  .then((myBlob) => {
+    flutterWebview.postMessage({feature:'blob', data:myBlob});    
+  });
+        flutterWebview.postMessage("haha");
+      }      
+    }
+      
   </script>
 </head>
 
 <body onload="window.setTimeout(onLoad, 200)">
-  <input type="button" value="test" onclick="test()" />
+  <input type="button" value="test" onclick="test()" />  
+  <br />
+  <input type="button" value="test blob" onclick="test2()" />  
 <hr>
 </body>
 </html>
