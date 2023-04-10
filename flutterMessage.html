@@ -25,10 +25,19 @@
   .then((response) => response.blob())
   .then((myBlob) => {
     flutterWebview.postMessage({feature:'blob', data:myBlob});    
-  });
-        
+  });        
       }      
     }
+    
+function test3() {
+      if(window.flutterWebview != undefined) {
+        var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
+        fetch(imageUrl)
+  .then((response) => response.blob())
+  .then((myBlob) => {
+      var url = URL.createObjectURL(myBlob);
+    flutterWebview.postMessage(JSON.stringify({feature:'blob', data:url}));    
+  });    
       
   </script>
 </head>
@@ -36,7 +45,7 @@
 <body onload="window.setTimeout(onLoad, 200)">
   <input type="button" value="test" onclick="test()" />  
   <br />
-  <input type="button" value="test blob" onclick="test2()" />  
+  <input type="button" value="test blob" onclick="test3()" />  
 <hr>
 </body>
 </html>
