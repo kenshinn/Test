@@ -54,8 +54,11 @@ function test4() {
                     reader.onloadend = function() {
                         var base64String = reader.result;
                         flutterWebview.postMessage(JSON.stringify({
-                            feature: 'blob',
-                            data: base64String
+                            feature: 'ar-message',
+                            share: {
+                              type: 'blob',
+                              data: base64String 
+                            }
                         }));
                     }
                     reader.readAsDataURL(myBlob);                
@@ -89,6 +92,8 @@ function test5() {
 
 <body onload="window.setTimeout(onLoad, 200)">
   <input type="button" value="test" onclick="test()" />  
+  <br />
+  <input type="button" value="test postMessage" onclick="test4()" />  
   <br />
   <input type="button" value="test localStorage" onclick="test5()" />  
   <br />
