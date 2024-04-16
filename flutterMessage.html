@@ -46,7 +46,7 @@ function test3() {
 function test4() {
     if (window.flutterWebview != undefined) {
         //var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
-        var imageUrl = "https://kenshinn.github.io/Test/5mb.mp4";
+        var imageUrl = "https://kenshinn.github.io/Test/2mb.mp4";
         fetch(imageUrl)
             .then((response) => response.blob())
             .then(function(myBlob) {
@@ -70,7 +70,7 @@ function test4() {
 function test5() {
     if (window.flutterWebview != undefined) {
         //var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
-        var imageUrl = "https://kenshinn.github.io/Test/5mb.mp4";
+        var imageUrl = "https://kenshinn.github.io/Test/2mb.mp4";
         fetch(imageUrl)
             .then((response) => response.blob())
             .then(function(myBlob) {
@@ -93,6 +93,7 @@ function test5() {
 </head>
 
 <body onload="window.setTimeout(onLoad, 200)">
+  2mb
   <input type="button" value="test" onclick="test()" />  
   <br />
   <input type="button" value="test postMessage" onclick="test4()" />  
