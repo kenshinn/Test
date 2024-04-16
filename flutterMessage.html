@@ -62,6 +62,27 @@ function test4() {
             });
     }
 }  
+
+function test5() {
+    if (window.flutterWebview != undefined) {
+        var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
+        fetch(imageUrl)
+            .then((response) => response.blob())
+            .then(function(myBlob) {
+                    var reader = new FileReader();
+
+                    reader.onloadend = function() {
+                        var base64String = reader.result;
+                        window.localStorage.setItem('shareItem',JSON.stringify({
+                            feature: 'blob',
+                            data: base64String
+                        }));
+                        flutterWebview.postMessage('{"feature":"shareLocalStorage"}');
+                    }
+                    reader.readAsDataURL(myBlob);                
+            });
+    }
+}      
       
   </script>
 </head>
@@ -69,7 +90,7 @@ function test4() {
 <body onload="window.setTimeout(onLoad, 200)">
   <input type="button" value="test" onclick="test()" />  
   <br />
-  <input type="button" value="test blob" onclick="test4()" />  
+  <input type="button" value="test localStorage" onclick="test5()" />  
   <br />
   <a href="intent:#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT=https%3A%2F%2Fwww.google.com%2F;end">test link</a>
   <br />
