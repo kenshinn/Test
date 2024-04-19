@@ -11,19 +11,20 @@
 }
       }
       var imageUrl = "https://kenshinn.github.io/Test/20mb.mp4";
+      var t1 = new Date().getTime();
+      console.log("before fetch to base64 : " + t1);
+
       fetch(imageUrl)
           .then((response) => response.blob())
           .then(function(myBlob) {
-                var t1 = new Date().getTime();
-                console.log("before base64 Str : " + t1);
 
                   var reader = new FileReader();
 
                   reader.onloadend = function() {
                       window.base64String = reader.result;  
                       var t2 = new Date().getTime();
-                      console.log("after base64 Str : " + t2);
-                      console.log("base64 time: " + (t2-t1));
+                      console.log("after fetch to base64 : " + t2);
+                      console.log("fetch to base64 time: " + (t2-t1));
 
                       
                   }
