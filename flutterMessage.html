@@ -14,10 +14,18 @@
       fetch(imageUrl)
           .then((response) => response.blob())
           .then(function(myBlob) {
+                var t1 = new Date().getTime();
+                console.log("before base64 Str : " + t1);
+
                   var reader = new FileReader();
 
                   reader.onloadend = function() {
-                      window.base64String = reader.result;                        
+                      window.base64String = reader.result;  
+                      var t2 = new Date().getTime();
+                      console.log("after base64 Str : " + t2);
+                      console.log("base64 time: " + (t2-t1));
+
+                      
                   }
                   reader.readAsDataURL(myBlob);                
           });
