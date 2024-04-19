@@ -10,7 +10,7 @@
           alert("onmessage:" + event.data);
 }
       }
-      var imageUrl = "https://kenshinn.github.io/Test/3.7mb.mp4";
+      var imageUrl = "https://kenshinn.github.io/Test/20mb.mp4";
       fetch(imageUrl)
           .then((response) => response.blob())
           .then(function(myBlob) {
@@ -121,7 +121,7 @@ function test5() {
 </head>
 
 <body onload="window.setTimeout(onLoad, 200)">
-  3.7mb
+  20mb
   <input type="button" value="test" onclick="test()" />  
   <br />
   <input type="button" value="test postMessage" onclick="test4()" />  
