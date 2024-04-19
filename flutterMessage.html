@@ -65,7 +65,8 @@ function test4() {
 
     //                 reader.onloadend = function() {
     //                    var base64String = reader.result;
-                        console.log("before postMessage: " + new Date().getTime());
+                        var t1 = new Date().getTime();
+                        console.log("before postMessage: " + t1);
 
                         flutterWebview.postMessage(JSON.stringify({
                             feature: 'ar-message',
@@ -74,7 +75,9 @@ function test4() {
                               data: window.base64String 
                             }
                         }));
-                        console.log("after postMessage: " + new Date().getTime());
+                        var t2 = new Date().getTime();
+                        console.log("after postMessage: " + t2);
+                        console.log("postMessage time: " + (t2-t1));
 
             //         }
             //         reader.readAsDataURL(myBlob);                
@@ -92,18 +95,23 @@ function test5() {
 
     //                 reader.onloadend = function() {
     //                     var base64String = reader.result;
-                        console.log("before set localStoreage Item: " + new Date().getTime());
+                        var t1 = new Date().getTime();
+                        console.log("before set localStoreage Item: " + t1);
 
                         window.localStorage.setItem('shareItem',JSON.stringify({
                             feature: 'blob',
                             data: window.base64String
                         }));
-                        console.log("after set localStoreage Item: " + new Date().getTime());
+                        var t2 = new Date().getTime();
+                        console.log("after set localStoreage Item: " + t2);
+                        console.log("set localStoreage time: " + (t2-t1));            //         }
 
-                        console.log("before postMessage: " + new Date().getTime())
+                        var t1 = new Date().getTime();
+                        console.log("before postMessage: " + t1);                        
                         flutterWebview.postMessage('{"feature":"shareLocalStorage"}');
-                        console.log("after postMessage: " + new Date().getTime())
-            //         }
+                        var t2 = new Date().getTime();
+                        console.log("after postMessage: " + t2);
+                        console.log("postMessage time: " + (t2-t1));            //         }
             //         reader.readAsDataURL(myBlob);                
             // });
     }
