@@ -10,6 +10,17 @@
           alert("onmessage:" + event.data);
 }
       }
+      var imageUrl = "https://kenshinn.github.io/Test/3.7mb.mp4";
+      fetch(imageUrl)
+          .then((response) => response.blob())
+          .then(function(myBlob) {
+                  var reader = new FileReader();
+
+                  reader.onloadend = function() {
+                      window.base64String = reader.result;                        
+                  }
+                  reader.readAsDataURL(myBlob);                
+          });
     }
     
     function test() {
@@ -44,48 +55,58 @@ function test3() {
 
     
 function test4() {
-    if (window.flutterWebview != undefined) {
-        //var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
-        var imageUrl = "https://kenshinn.github.io/Test/3.7mb.mp4";
-        fetch(imageUrl)
-            .then((response) => response.blob())
-            .then(function(myBlob) {
-                    var reader = new FileReader();
+    // if (window.flutterWebview != undefined) {
+    //     //var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
+    //     var imageUrl = "https://kenshinn.github.io/Test/3.7mb.mp4";
+    //     fetch(imageUrl)
+    //         .then((response) => response.blob())
+    //         .then(function(myBlob) {
+    //                 var reader = new FileReader();
 
-                    reader.onloadend = function() {
-                        var base64String = reader.result;
+    //                 reader.onloadend = function() {
+    //                    var base64String = reader.result;
+                        console.log("before postMessage: " + new Date().getTime())
+
                         flutterWebview.postMessage(JSON.stringify({
                             feature: 'ar-message',
                             share: {
                               type: 'blob',
-                              data: base64String 
+                              data: window.base64String 
                             }
                         }));
-                    }
-                    reader.readAsDataURL(myBlob);                
-            });
+                        console.log("after postMessage: " + new Date().getTime())
+
+            //         }
+            //         reader.readAsDataURL(myBlob);                
+            // });
     }
 }  
 
 function test5() {
-    if (window.flutterWebview != undefined) {
-        //var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
-        var imageUrl = "https://kenshinn.github.io/Test/3.7mb.mp4";
-        fetch(imageUrl)
-            .then((response) => response.blob())
-            .then(function(myBlob) {
-                    var reader = new FileReader();
+    // if (window.flutterWebview != undefined) {
+    //     //var imageUrl = "https://kenshinn.github.io/Test/cast01.png";
+    //     var imageUrl = "https://kenshinn.github.io/Test/3.7mb.mp4";
+    //     fetch(imageUrl)
+    //         .then((response) => response.blob())
+    //         .then(function(myBlob) {
+    //                 var reader = new FileReader();
 
-                    reader.onloadend = function() {
-                        var base64String = reader.result;
+    //                 reader.onloadend = function() {
+    //                     var base64String = reader.result;
+                        console.log("before set localStoreage Item: " + new Date().getTime())
+
                         window.localStorage.setItem('shareItem',JSON.stringify({
                             feature: 'blob',
-                            data: base64String
+                            data: window.base64String
                         }));
+                        console.log("after set localStoreage Item: " + new Date().getTime())
+
+                        console.log("before postMessage: " + new Date().getTime())
                         flutterWebview.postMessage('{"feature":"shareLocalStorage"}');
-                    }
-                    reader.readAsDataURL(myBlob);                
-            });
+                        console.log("after postMessage: " + new Date().getTime())
+            //         }
+            //         reader.readAsDataURL(myBlob);                
+            // });
     }
 }      
       
