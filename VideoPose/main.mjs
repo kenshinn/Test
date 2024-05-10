@@ -6,13 +6,15 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE_VRM from 'three-vrm';
 import * as THREE from 'three';
 
-class App{
-	constructor(){
+class App {
+	constructor() {
 		this.engine = new Engine(document.getElementById("three"));
-		(async()=>{
+		(async () => {
 			//load vrm and add to threejs main scene
 			//fake url handled in shouldInterceptRequest
-			const [vrm, script] = await this.loadVRM('VRM1_Constraint_Twist_Sample.vrm');
+			//const [vrm, script] = await this.loadVRM('VRM1_Constraint_Twist_Sample.vrm');
+			const [vrm, script] = await this.loadVRM('sora.vrm');
+
 			this.vrm = vrm;
 			this.model = vrm.scene;
 			this.engine.addObject(vrm.scene);
@@ -20,24 +22,24 @@ class App{
 			return this;
 		})();
 	}
-	initGUI(){
-		this.gui = new GUI({autoplace: false, width:120});
+	initGUI() {
+		this.gui = new GUI({ autoplace: false, width: 120 });
 	}
 	//VRM
-	async loadVRM(path){
+	async loadVRM(path) {
 		const loader = new GLTFLoader();
 		// const helperRoot = new THREE.Group();// helperRoot is for debugging only
 		// helperRoot.renderOrder = 10000;
-		loader.register( parser => new THREE_VRM.VRMLoaderPlugin(parser, {
+		loader.register(parser => new THREE_VRM.VRMLoaderPlugin(parser, {
 			// helperRoot: helperRoot
 		}));
 
 		// loading
 		const gltf = await loader.loadAsync(path);
-		THREE_VRM.VRMUtils.removeUnnecessaryVertices( gltf.scene );
-		THREE_VRM.VRMUtils.removeUnnecessaryJoints( gltf.scene );
+		THREE_VRM.VRMUtils.removeUnnecessaryVertices(gltf.scene);
+		THREE_VRM.VRMUtils.removeUnnecessaryJoints(gltf.scene);
 		const vrm = gltf.userData.vrm;
-		vrm.scene.traverse((obj)=>{obj.frustumCulled=false});
+		vrm.scene.traverse((obj) => { obj.frustumCulled = false });
 		const model = vrm.scene;
 		// model.add(helperRoot);
 		// THREE_VRM.VRMUtils.rotateVRM0( vrm );
@@ -49,42 +51,42 @@ class App{
 		retargeter.scanBones(VRMSkeleton.getBones(vrm));
 
 		// set morph
-		model.addEventListener("morph", (e)=>{
-			for(const [key, value] of Object.entries(VRMSkeleton.morph_map))
+		model.addEventListener("morph", (e) => {
+			for (const [key, value] of Object.entries(VRMSkeleton.morph_map))
 				vrm.expressionManager.setValue(key, e.data[value]);
 		});
 		// set motion data to retargeter
-		model.addEventListener("rotations", (e)=>{
+		model.addEventListener("rotations", (e) => {
 			retargeter.setRotations(e.data);
 		});
-		model.addEventListener("translations", (e)=>{
+		model.addEventListener("translations", (e) => {
 			retargeter.setTranslation(...e.data);
 		});
 
-		return [vrm, (delta)=>{//this will be called in render loop
+		return [vrm, (delta) => {//this will be called in render loop
 			retargeter.update();
 			vrm.update(delta);
 		}];
 	}
 }
 
-(async()=>{
+(async () => {
 	let app = await new App();
 	window.app = app;
 
-	addEventListener("pose", (event)=>{
+	addEventListener("pose", (event) => {
 		//console.log(event.data.length);
 		const pose = JSON.parse(event.data);
-		if(pose.rotations.length!=0){
-			const rotations = pose.rotations.map(r=>[...r.slice(1), r[0]]);
-			app.model?.dispatchEvent({type: "rotations", data: rotations});
+		if (pose.rotations.length != 0) {
+			const rotations = pose.rotations.map(r => [...r.slice(1), r[0]]);
+			app.model?.dispatchEvent({ type: "rotations", data: rotations });
 		}
-		if(pose.positions.length!=0){
+		if (pose.positions.length != 0) {
 			const positions = [
-				pose.positions[0], 
-				pose.positions.slice(1).map(p=>Math.sqrt(p[0]*p[0]+p[1]*p[1]+p[2]*p[2]))
+				pose.positions[0],
+				pose.positions.slice(1).map(p => Math.sqrt(p[0] * p[0] + p[1] * p[1] + p[2] * p[2]))
 			];
-			app.model?.dispatchEvent({type: "translations", data: positions});
+			app.model?.dispatchEvent({ type: "translations", data: positions });
 		}
 	});
 })();
