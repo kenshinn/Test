@@ -12,8 +12,8 @@ class App {
 		(async () => {
 			//load vrm and add to threejs main scene
 			//fake url handled in shouldInterceptRequest
-			//const [vrm, script] = await this.loadVRM('VRM1_Constraint_Twist_Sample.vrm');
-			const [vrm, script] = await this.loadVRM('sora.vrm');
+			const [vrm, script] = await this.loadVRM('VRM1_Constraint_Twist_Sample.vrm');
+			//const [vrm, script] = await this.loadVRM('sora.vrm');
 
 			this.vrm = vrm;
 			this.model = vrm.scene;
