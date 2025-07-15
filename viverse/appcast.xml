@@ -1,0 +1,10 @@
+<rss version="2.0">
+  <channel>
+    <title>App Updates</title>
+    <item>
+      <title>1.1.59</title>
+      <sparkle:releaseNotesLink>https://kenshinn.github.io/Test/viverse/release-notes.html</sparkle:releaseNotesLink>      
+      <pubDate>Tue, 15 Jul 2025 12:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
