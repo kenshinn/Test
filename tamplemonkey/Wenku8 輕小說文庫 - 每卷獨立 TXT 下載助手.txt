@@ -1,0 +1,157 @@
+// ==UserScript==
+// @name         Wenku8 輕小說文庫 - 每卷獨立 TXT 下載助手 (強制 .txt 檔名版)
+// @namespace    https://greasyfork.org/
+// @version      2.2
+// @description  在 Wenku8 目錄頁面的每一卷標題旁，自動生成直接下載該卷 TXT（繁體 BIG5 / 簡體 UTF-8）的 HTTPS 下載連結，並強制加上 .txt 副檔名
+// @author       Assistant
+// @match        *://*.wenku8.net/modules/article/reader.php*
+// @match        *://*.wenku8.com/modules/article/reader.php*
+// @match        *://*.wenku8.cc/modules/article/reader.php*
+// @match        *://*.wenku8.net/novel/*
+// @match        *://*.wenku8.com/novel/*
+// @match        *://*.wenku8.cc/novel/*
+// @connect      dl.wenku8.com
+// @connect      *.wenku8.com
+// @run-at       document-end
+// @grant        GM_download
+// @grant        GM_xmlhttpRequest
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // 1. 取得當前小說 aid
+    const urlMatch = window.location.href.match(/[?&]aid=(\d+)/) || window.location.pathname.match(/\/novel\/\d+\/(\d+)\//);
+    if (!urlMatch) return;
+    const aid = urlMatch[1];
+
+    // 2. 獲取所有卷標題單元格
+    let volumeTds = document.querySelectorAll('td.vcss');
+    if (volumeTds.length === 0) {
+        volumeTds = document.querySelectorAll('table.grid tr td[colspan], table tr td[colspan="4"]');
+    }
+
+    // 封裝通用下載函數，強制指定副檔名為 .txt
+    function triggerDownload(url, filename, btn, originalText) {
+        btn.innerText = '⏳ 下載中...';
+
+        // 確保檔名一定是 .txt 結尾
+        const finalName = filename.endsWith('.txt') ? filename : `${filename}.txt`;
+
+        if (typeof GM_download === 'function') {
+            GM_download({
+                url: url,
+                name: finalName,
+                saveAs: false,
+                onload: () => {
+                    btn.innerText = '✅ 下載完成';
+                    setTimeout(() => { btn.innerText = originalText; }, 2000);
+                },
+                onerror: (err) => {
+                    console.warn('GM_download 失敗，啟用備用下載...', err);
+                    fallbackBlobDownload(url, finalName, btn, originalText);
+                }
+            });
+        } else {
+            fallbackBlobDownload(url, finalName, btn, originalText);
+        }
+    }
+
+    // 備用 Blob 下載通道
+    function fallbackBlobDownload(url, filename, btn, originalText) {
+        if (typeof GM_xmlhttpRequest === 'function') {
+            GM_xmlhttpRequest({
+                method: 'GET',
+                url: url,
+                responseType: 'blob',
+                onload: function (res) {
+                    const blob = res.response;
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = blobUrl;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    window.URL.revokeObjectURL(blobUrl);
+                    btn.innerText = '✅ 下載完成';
+                    setTimeout(() => { btn.innerText = originalText; }, 2000);
+                },
+                onerror: function () {
+                    alert('下載失敗，請嘗試右鍵另存連結');
+                    btn.innerText = originalText;
+                }
+            });
+        }
+    }
+
+    volumeTds.forEach(volTd => {
+        // 先取得原始卷標題並清理非法字元
+        const rawVolTitle = volTd.innerText.trim();
+        if (!rawVolTitle) return;
+        const cleanVolTitle = rawVolTitle
+            .replace(/[\r\n\t]/g, ' ')
+            .replace(/[\\/*?:"<>|]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+
+        // 3. 尋找屬於本卷的第一個章節連結以提取 cid
+        let nextTr = volTd.closest('tr').nextElementSibling;
+        let firstChapterA = null;
+
+        while (nextTr) {
+            if (nextTr.querySelector('td.vcss') || nextTr.querySelector('td[colspan]')) {
+                break;
+            }
+            const a = nextTr.querySelector('td.ccss a, a');
+            if (a && a.getAttribute('href')) {
+                firstChapterA = a;
+                break;
+            }
+            nextTr = nextTr.nextElementSibling;
+        }
+
+        if (!firstChapterA) return;
+
+        const href = firstChapterA.getAttribute('href');
+        const cidMatch = href.match(/[?&]cid=(\d+)/) || href.match(/\/(\d+)\.htm/);
+        if (!cidMatch) return;
+        const cid = cidMatch[1];
+
+        // 4. 下載參數設定（vname 與 targetFilename 一併加上 .txt）
+        const targetFilename = `${cleanVolTitle}.txt`;
+        const encodedVname = encodeURIComponent(targetFilename);
+        const big5Url = `https://dl.wenku8.com/packtxt.php?aid=${aid}&vid=${cid}&charset=big5&vname=${encodedVname}`;
+        const utf8Url = `https://dl.wenku8.com/packtxt.php?aid=${aid}&vid=${cid}&charset=utf-8&vname=${encodedVname}`;
+
+        // 5. 建立按鈕
+        const btnContainer = document.createElement('span');
+        btnContainer.style.marginLeft = '18px';
+        btnContainer.style.fontSize = '12px';
+        btnContainer.style.fontWeight = 'normal';
+        btnContainer.style.display = 'inline-block';
+        btnContainer.style.verticalAlign = 'middle';
+
+        // 繁體按鈕
+        const btnBig5 = document.createElement('button');
+        btnBig5.innerText = '📥 下載本卷 (繁體 BIG5)';
+        btnBig5.style.cssText = 'background-color: #28a745; color: white; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; margin-right: 6px; font-size: 12px; font-weight: bold;';
+        btnBig5.onclick = (e) => {
+            e.preventDefault();
+            triggerDownload(big5Url, targetFilename, btnBig5, '📥 下載本卷 (繁體 BIG5)');
+        };
+
+        // 簡體按鈕
+        const btnUtf8 = document.createElement('button');
+        btnUtf8.innerText = '📥 (簡體 UTF-8)';
+        btnUtf8.style.cssText = 'background-color: #17a2b8; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px;';
+        btnUtf8.onclick = (e) => {
+            e.preventDefault();
+            triggerDownload(utf8Url, targetFilename, btnUtf8, '📥 (簡體 UTF-8)');
+        };
+
+        btnContainer.appendChild(btnBig5);
+        btnContainer.appendChild(btnUtf8);
+        volTd.appendChild(btnContainer);
+    });
+})();
